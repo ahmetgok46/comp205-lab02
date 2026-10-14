@@ -18,7 +18,7 @@ class _CourseScreenState extends State<CourseScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            
+          
             Row(
               children: [
                 const CircleAvatar(
@@ -40,7 +40,7 @@ class _CourseScreenState extends State<CourseScreen> {
               ],
             ),
             const SizedBox(height: 16),
-
+        
             Row(
               children: const [
                 Expanded(
@@ -71,6 +71,16 @@ class _CourseScreenState extends State<CourseScreen> {
                   ),
                 ),
               ],
+            ),
+            const SizedBox(height: 16),
+
+            const Card(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text(
+                  'Build AI-powered mobile apps with Flutter: from widgets to machine learning and LLMs.',
+                ),
+              ),
             ),
           ],
         ),
