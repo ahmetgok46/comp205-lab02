@@ -8,17 +8,34 @@ class CourseScreen extends StatefulWidget {
 }
 
 class _CourseScreenState extends State<CourseScreen> {
+  
+  int count = 0;
+  bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('COMP 205'),
+        actions: [
+          
+          IconButton(
+            icon: Icon(
+              isFavorite ? Icons.favorite : Icons.favorite_border,
+            ),
+            onPressed: () {
+              setState(() {
+                isFavorite = !isFavorite;
+              });
+            },
+          ),
+        ],
       ),
+      
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-          
             Row(
               children: [
                 const CircleAvatar(
@@ -40,7 +57,7 @@ class _CourseScreenState extends State<CourseScreen> {
               ],
             ),
             const SizedBox(height: 16),
-        
+
             Row(
               children: const [
                 Expanded(
@@ -81,6 +98,18 @@ class _CourseScreenState extends State<CourseScreen> {
                   'Build AI-powered mobile apps with Flutter: from widgets to machine learning and LLMs.',
                 ),
               ),
+            ),
+            const SizedBox(height: 16),
+
+            Text('Interested: $count'),
+            const SizedBox(height: 8),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  count++;
+                });
+              },
+              child: const Text("I'm interested"),
             ),
           ],
         ),
