@@ -18,7 +18,7 @@ class _CourseScreenState extends State<CourseScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Part 1: Header row
+            
             Row(
               children: [
                 const CircleAvatar(
@@ -34,6 +34,39 @@ class _CourseScreenState extends State<CourseScreen> {
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       const Text('Fall 2026 · B238'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+            Row(
+              children: const [
+                Expanded(
+                  child: Column(
+                    children: [
+                      Icon(Icons.schedule),
+                      SizedBox(height: 4),
+                      Text('Mon 10:00'),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Icon(Icons.computer),
+                      SizedBox(height: 4),
+                      Text('Wed 10:00'),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Icon(Icons.groups),
+                      SizedBox(height: 4),
+                      Text('Fri 15:00'),
                     ],
                   ),
                 ),
